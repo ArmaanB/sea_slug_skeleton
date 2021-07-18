@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 stv = 4
 
 # TODO: set up an input pulse called pls
-pls = [0, 0, 0, 1, 0, 0]
+pls = [0, 0, 1, 0, 0]
 
 # TODO: then create a list of 6 pulses, called x, to use for input
 x = pls * 6
@@ -43,7 +43,7 @@ y = np.zeros((1,nTs)) # set up (define) a vector for the output time series
 #     transformed to the output value in the vector y
 for t in range(len(x)):
     y[0, t] = v * x[t]
-    if x[t]:
+    if x[t] > 0:
         v *= 0.7
 
 ###############################
