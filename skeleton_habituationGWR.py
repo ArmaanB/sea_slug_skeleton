@@ -19,10 +19,10 @@ import matplotlib.pyplot as plt
 stv = 4
 
 # TODO: set up an input pulse called pls
-pls = [0, 0, 0, 1, 0, 0]  
+pls = [0, 0, 0, 1, 0, 0]
 
 # TODO: then create a list of 6 pulses, called x, to use for input
-x = [ pls for x in range(6)]
+x = pls * 6
 
 v = stv # Set connection weight to start weight value
 
@@ -43,8 +43,8 @@ y = np.zeros((1,nTs)) # set up (define) a vector for the output time series
 #     transformed to the output value in the vector y
 for t in range(len(x)):
     y[0, t] = v * x[t]
-    pls * v
-
+    if x[t]:
+        v *= 0.7
 
 ###############################
 # Plot the results
